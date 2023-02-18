@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        *
+        {
+            padding: 0px;
+            margin: 0px;
+        }
+        body
+        {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(./assets/background.jpeg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: 0px 0px;
+        }
+        #cont
+        {
+            position: relative;
+            width: 50%;
+            height: 80%;
+            background-color: black;
+            border-radius: 2%;
+            box-shadow: 5px 5px 10px gray;
+        }
+        #display
+        {
+            position: absolute;
+            width: 75%;
+            height: 60px;
+            top: 5%;
+            left: 10%;
+            background-color: black;
+            color: white;
+            font-size: 25px;
+            padding: 5px;
+            outline: none;
+            border: solid 3px rgb(138, 130, 130);
+            box-shadow: 2px 2px 5px black;
+        }
+        .a
+        {
+            top: 15vh;
+            left: 5vw;
+            margin: 12px;
+            margin-right: 12px;
+            margin-top: 20px;
+            position: relative;
+            width: 15%;
+            height: 8vh;
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            box-shadow: 2px 2px 2px black;
+            border-radius: 5px;
+            border: 2px solid white;
+        }
+        #equal
+        {
+            position: absolute;
+            bottom: 60px;
+            width: 35%;
+            height: 8vh;
+            font-size: 24px;
+            left: 5vw;
+            background-color: rgb(131, 41, 41);
+            color: white;
+            box-shadow: 2px 2px 2px black;
+            border-radius: 5px;
+            border: 2px solid white;
+        }
+        #clear
+        {
+            position: absolute;
+            bottom: 60px;
+            width: 35%;
+            height: 8vh;
+            font-size: 24px;
+            right: 5vw;
+            background-color: rgb(131, 41, 41);
+            color: white;
+            box-shadow: 2px 2px 2px black;
+            border-radius: 5px;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+    <form name="cform">
+        <input name="ans" id="display">
+        <br>
+        <input type="button" onmousedown="kisssound()" value="1" onclick="cform.ans.value+='1'" class="a" id="a1" onfocus="color1()" onblur="color2()">
+        <input type="button" onmousedown="kisssound()" value="2" onclick="cform.ans.value+='2'" class="a">
+        <input type="button" onmousedown="kisssound()" value="3" onclick="cform.ans.value+='3'" class="a">
+        <input type="button" onmousedown="kisssound()" value="+" onclick="cform.ans.value+='+'" class="a">
+        <br>
+        <input type="button" onmousedown="kisssound()" value="4" onclick="cform.ans.value+='4'" class="a">
+        <input type="button" onmousedown="kisssound()" value="5" onclick="cform.ans.value+='5'" class="a">
+        <input type="button" onmousedown="kisssound()" value="6" onclick="cform.ans.value+='6'" class="a">
+        <input type="button" onmousedown="kisssound()" value="-" onclick="cform.ans.value+='-'" class="a">
+        <br>
+        <input type="button" onmousedown="kisssound()" value="7" onclick="cform.ans.value+='7'" class="a">
+        <input type="button" onmousedown="kisssound()" value="8" onclick="cform.ans.value+='8'" class="a">
+        <input type="button" onmousedown="kisssound()" value="9" onclick="cform.ans.value+='9'" class="a">
+        <input type="button" onmousedown="kisssound()" value="*" onclick="cform.ans.value+='*'" class="a">
+        <br>
+        <input type="button" onmousedown="kisssound()" value="%" onclick="cform.ans.value+='%'" class="a">
+        <input type="button" onmousedown="kisssound()" value="0" onclick="cform.ans.value+='0'" class="a">
+        <input type="button" onmousedown="kisssound()" value="." onclick="cform.ans.value+='.'" class="a">
+        <input type="button" onmousedown="kisssound()" value="/" onclick="cform.ans.value+='/'" class="a">
+        <br>
+        <input type="button" onmousedown="kisssound()" value="=" onclick="cform.ans.value=eval(cform.ans.value)" id="equal">
+        <input type="button" onmousedown="kisssound()" value="C" onclick="cform.ans.value=' '" id="clear">
+        <br>
+    </form>
+</div>
+<script>
+    function kisssound()
+    {
+        var kisssound=new Audio()
+        kisssound.src="beep-01a.mp3"
+        kisssound.play()
+    }
+    function color1()
+    {
+        document.getElementById("a1").style.backgroundColor="red"
+    }
+    function color2()
+    {
+        document.getElementById("a1").style.backgroundColor=""
+    }
+</script>
+</body>
+</html>
